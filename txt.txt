@@ -1,0 +1,28 @@
+
+
+3: 4
+4
+5
+
+
+n = 3
+
+
+b1 b2 b3
+
+====================
+
+1. pages:
+        homeClass
+        resultsClass
+        shoppingcartsClass
+2. test:
+    test_home
+    test_results
+    test_shoppingcarts
+
+
+
+pre
+1. git download
+2. github account
