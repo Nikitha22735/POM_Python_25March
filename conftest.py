@@ -1,6 +1,7 @@
 import pytest
 
 from pages.home import homePage
+from pages.login import loginPage
 from pages.results import resultsPage
 
 
@@ -13,6 +14,11 @@ def homePageObj(page):
 def resultsPageObj(page):
     resultsPageObj_f = resultsPage(page)
     return resultsPageObj_f
+
+@pytest.fixture()
+def loginPageObj(page):
+    loginpageObj_f = loginPage(page)
+    return loginpageObj_f
 
 @pytest.fixture(scope="function",autouse=True)
 def launchingAmazon(page):

@@ -17,6 +17,9 @@ class homePage:
     def validateAccountsNdListVisibility(self):
         expect(self.accountsNdListBtn).to_be_visible()
 
+    def clickOnAccountsNdList(self):
+        self.accountsNdListBtn.click()
+
     def enterSearchText(self, product):
         self.searchBar.wait_for(state='visible')
         self.searchBar.fill(product)
