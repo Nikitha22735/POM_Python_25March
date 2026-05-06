@@ -6,3 +6,5 @@ git add .:  to add all the files in to the git
 git add tests/test_datahandling.py: for selecting single file
 git commit -m "message":
 git push
+
+raise pr
