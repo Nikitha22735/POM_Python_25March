@@ -1,6 +1,9 @@
 
 import csv
 import json
+import os
+from dotenv import load_dotenv
+from openpyxl import load_workbook
 
 
 def jsonhandling():
@@ -11,7 +14,7 @@ def jsonhandling():
         formattedData = json.load(data)
         print(formattedData["negitiveCredentials"]["password"])
 
-def test_handlingCsv():
+def handlingCsv():
     values = []
     filepath="testData/credentails.csv"
     with open(filepath) as data:
@@ -21,18 +24,41 @@ def test_handlingCsv():
 
     print(values[0]["password"])
 
+#python -m pip install openpyxl
+# def test_excelHandling():
+#     filepath ="testData/creds.xlsx"
+#     workbook = load_workbook(filepath)
+#     sheet = workbook["creds"]
+#     values = []
+#     for i in sheet.iter_rows(min_row=2, values_only=True):
+#         values.append(i)
+
+#     print(values)
+
+#cmd
+# set usname=testing123&&set pw=welcome&&pytest tests/test_datahandling.py -s
+#powershell
+#$env:usname=testing123;$env:pw=welcome;pytest tests/test_datahandling.py -s
+def passingDataThroughCLI():
+    username = os.getenv("usname")
+    pw = os.getenv("pw")
+    print(username)
+    print(pw)
 
 
-# [1,2,3]
-#     [
-#         {'username': 'test1@gmail.com', 
-#          'password': 'Admin1@123', 
-#          'age': '20'
-#          }, 
-#          {'username': 'test2@gmail.com', 
-#           'password': 'Admin2@123', 
-#           'age': '20'
-#           }
-#     ]
+#pip install python-dotenv
+def test_passingDataThroughEnv():
+    load_dotenv(dotenv_path=os.getenv("envpath"))
+    username = os.getenv("usname")
+    pw = os.getenv("pw")
+    print(username)
+    print(pw)
+
+
+
+
+
+
+
         
         
