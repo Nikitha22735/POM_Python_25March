@@ -19,7 +19,7 @@ def test_ValidatingCartVisibility(page):
         homePageObj = homePage(page)
 
         homePageObj.validateTheVisibilityOfSearchBar()
-        expect(page.locator("#nav-cart-text-container")).to_be_visible()
+        expect(page.locator("#nav-cart-text-container")).not_to_be_visible()
 
 
 @pytest.mark.test1
@@ -32,7 +32,7 @@ def test_ValidatingCartVisibility_1(page):
 
 
 
-@pytest.mark.test1
+# @pytest.mark.test1
 def test_ValidatingCartVisibility_2(page):
         page.goto("https://www.amazon.in/")
         homePageObj = homePage(page)
@@ -42,7 +42,7 @@ def test_ValidatingCartVisibility_2(page):
 
 
 
-@pytest.mark.test1
+# @pytest.mark.test1
 def test_ValidatingCartVisibility_3(page):
         page.goto("https://www.amazon.in/")
         homePageObj = homePage(page)

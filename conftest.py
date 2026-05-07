@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from pages.home import homePage
@@ -24,6 +25,22 @@ def loginPageObj(page):
 def launchingAmazon(page):
     page.goto("https://www.amazon.in/")
 
-# @pytest.fixture()
-# def logInToAmazon(page):
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    report = outcome.get_result()
+
+    # Capture screenshots for setup, call, and teardown failures
+    if report.failed:
+        page = item.funcargs.get("page", None)
+        if page:
+            step = report.when  # setup / call / teardown
+            screenshot = page.screenshot()
+            allure.attach(
+                screenshot,
+                name=f"Failure Screenshot ({step})",
+                attachment_type=allure.attachment_type.PNG
+            )
 

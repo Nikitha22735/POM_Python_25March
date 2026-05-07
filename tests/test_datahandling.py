@@ -2,14 +2,18 @@
 import csv
 import json
 import os
+import allure
 from dotenv import load_dotenv
 from openpyxl import load_workbook
+import pytest
 
-
-def jsonhandling():
+@pytest.mark.test1
+@allure.step("Handling JSON file")
+def test_sonhandling():
     filepath = "testData/credentials.json"
 
     #reading the jsonFile
+
     with open(filepath) as data:
         formattedData = json.load(data)
         print(formattedData["negitiveCredentials"]["password"])
@@ -24,7 +28,7 @@ def handlingCsv():
 
     print(values[0]["password"])
 
-#python -m pip install openpyxl
+# #python -m pip install openpyxl
 # def test_excelHandling():
 #     filepath ="testData/creds.xlsx"
 #     workbook = load_workbook(filepath)
@@ -39,7 +43,7 @@ def handlingCsv():
 # set usname=testing123&&set pw=welcome&&pytest tests/test_datahandling.py -s
 #powershell
 #$env:usname=testing123;$env:pw=welcome;pytest tests/test_datahandling.py -s
-def passingDataThroughCLI():
+def test_passingDataThroughCLI():
     username = os.getenv("usname")
     pw = os.getenv("pw")
     print(username)
@@ -47,7 +51,7 @@ def passingDataThroughCLI():
 
 
 #pip install python-dotenv
-def test_passingDataThroughEnv():
+def passingDataThroughEnv():
     load_dotenv(dotenv_path=os.getenv("envpath"))
     username = os.getenv("usname")
     pw = os.getenv("pw")
