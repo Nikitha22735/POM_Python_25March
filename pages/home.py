@@ -1,15 +1,17 @@
+import allure
 from playwright.sync_api import Page, expect
 
 
-class homePage:
 
-    def __init__(self,page:Page):
+class homePage:
+    def __init__(self,page):
         self.searchBar = page.locator("#twotabsearchtextbox")
         self.accountsNdListBtn = page.get_by_text("Account & Lists")
         self.cartIcon = page.locator("#nav-cart-text-container")
         self.searchBtn = page.locator("#nav-search-submit-button")
 
 
+    @allure.step("validateTheVisibilityOfSearchBar")
     def validateTheVisibilityOfSearchBar(self):
         self.searchBar.wait_for(state='visible')
 

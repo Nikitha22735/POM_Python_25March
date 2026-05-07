@@ -1,0 +1,17 @@
+1. pages
+2. test 
+3. testData tech
+
+
+debugging:
+    1. debugger
+    2.--headed
+    3. analysing the report:html and allure
+    html: 
+    for html: pip install pytest-html
+    execute the code using : pytest --html=report.html
+    to open the report: start report.
+    allure:
+    pip install allure-pytest
+    execute the code using: pytest --alluredir=allure-results
+    to open the report: allure serve allure-results
