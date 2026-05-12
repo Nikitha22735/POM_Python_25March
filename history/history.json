@@ -1,0 +1,1 @@
+{"7ed8561a910854e6fd544d3cc40e17a6":{"statistic":{"failed":0,"broken":1,"skipped":0,"passed":0,"unknown":0,"total":1},"items":[{"uid":"3020c43116806c76","status":"broken","statusDetails":"_pytest.fixtures.FixtureLookupError: ('page', <FixtureRequest for <Function test_valiatingTheUIOfHomeScreen>>)","time":{"start":1778611899520,"stop":1778611899520,"duration":0}}]}}
