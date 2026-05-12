@@ -27,7 +27,7 @@ def shoppingCartObj(page):
     shoppingCartObj_f = shoppingCartPage(page)
     return shoppingCartObj_f
 
-@pytest.fixture(scope="function",autouse=True)
+@pytest.fixture(scope="function")
 def launchingAmazon(page):
     page.goto("https://www.amazon.in/")
 

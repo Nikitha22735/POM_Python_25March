@@ -7,12 +7,12 @@ from pages.home import homePage
         
 @pytest.mark.test12
 def test_valiatingTheUIOfHomeScreen(page, homePageObj):
-        # page.goto("https://www.amazon.in/")
+        page.goto("https://www.amazon.in/")
         # homePageObj = homePage(page)
         homePageObj.validateTheVisibilityOfSearchBar()
         homePageObj.validateAccountsNdListVisibility()       
         
-
+        
 @pytest.mark.test1
 def test_ValidatingCartVisibility(page):
         page.goto("https://www.amazon.in/")
