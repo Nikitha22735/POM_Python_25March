@@ -4,6 +4,7 @@ import pytest
 from pages.home import homePage
 from pages.login import loginPage
 from pages.results import resultsPage
+from pages.shopping_cart import shoppingCartPage
 
 
 @pytest.fixture()
@@ -21,6 +22,11 @@ def loginPageObj(page):
     loginpageObj_f = loginPage(page)
     return loginpageObj_f
 
+@pytest.fixture()
+def shoppingCartObj(page):
+    shoppingCartObj_f = shoppingCartPage(page)
+    return shoppingCartObj_f
+
 @pytest.fixture(scope="function",autouse=True)
 def launchingAmazon(page):
     page.goto("https://www.amazon.in/")
@@ -28,7 +34,7 @@ def launchingAmazon(page):
 
 
 @pytest.hookimpl(hookwrapper=True)
-def pytest_runtest_makereport(item, call):
+def pytest_runtest_makereport(item):
     outcome = yield
     report = outcome.get_result()
 

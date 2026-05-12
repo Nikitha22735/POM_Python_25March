@@ -9,7 +9,7 @@ import pytest
 
 @pytest.mark.test1
 @allure.step("Handling JSON file")
-def test_sonhandling():
+def sonhandling():
     filepath = "testData/credentials.json"
 
     #reading the jsonFile
@@ -29,15 +29,15 @@ def handlingCsv():
     print(values[0]["password"])
 
 # #python -m pip install openpyxl
-# def test_excelHandling():
-#     filepath ="testData/creds.xlsx"
-#     workbook = load_workbook(filepath)
-#     sheet = workbook["creds"]
-#     values = []
-#     for i in sheet.iter_rows(min_row=2, values_only=True):
-#         values.append(i)
+def test_excelHandling():
+    filepath ="testData/creds.xlsx"
+    workbook = load_workbook(filepath)
+    sheet = workbook["creds"]
+    values = []
+    for i in sheet.iter_rows(min_row=2, values_only=True):
+        values.append(i)
 
-#     print(values)
+    print(values)
 
 #cmd
 # set usname=testing123&&set pw=welcome&&pytest tests/test_datahandling.py -s

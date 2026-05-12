@@ -15,3 +15,16 @@ debugging:
     pip install allure-pytest
     execute the code using: pytest --alluredir=allure-results
     to open the report: allure serve allure-results
+
+
+    testing
+
+
+
+    dict1 ={
+        name:"trp"
+        page:"tt
+    }
+
+    dict1["page"]
+    dict1.get("page", "not found)
