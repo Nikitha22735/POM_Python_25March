@@ -6,6 +6,7 @@ class loginPage:
         self.emailtextBox = page.get_by_role("textbox", name="Enter mobile number or email")
         self.pwtextbox = page.get_by_role("textbox", name="Password")
         self.signInBtn = page.get_by_role("button", name="Sign in")
+        self.emailErrorTxt =  page.locator("//div[contains(text(),'Invalid email address')]")
 
 
     def enterEmail(self,emailId):
@@ -18,3 +19,7 @@ class loginPage:
 
     def clickOnSignBtn(self):
          self.signInBtn.click()
+
+    def validateTheEmailError(self):
+        expect(self.emailErrorTxt).to_be_visible()
+
