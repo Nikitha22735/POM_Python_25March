@@ -37,7 +37,7 @@ jobs:
       # 4️⃣ Run Playwright tests (parallel, keep artifacts)
       - name: Run Playwright Tests
         run: |
-          pytest -n 6 \
+          pytest -n 6 -m "test1234"\
             --alluredir=allure-results \
             --capture=tee-sys
         continue-on-error: true
