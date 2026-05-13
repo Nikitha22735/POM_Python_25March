@@ -1,2 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"broken","Tue May 12 18:51:39 UTC 2026","Tue May 12 18:51:39 UTC 2026","0","tests","test_home","","","","test_valiatingTheUIOfHomeScreen",""
+"broken","Wed May 13 12:41:59 UTC 2026","Wed May 13 12:42:30 UTC 2026","30715","tests","test_home","","","","test_valiatingTheUIOfHomeScreen[chromium]",""
