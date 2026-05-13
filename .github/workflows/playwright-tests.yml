@@ -53,7 +53,7 @@ jobs:
           echo "Listing allure-results contents:"
           ls -la allure-results || echo "No allure-results directory found"
 
-      # 6️⃣ Install Allure CLI
+      # 6️⃣ Install Allure CLI i
       - name: Install Allure CLI
         if: always()
         run: |
