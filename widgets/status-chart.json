@@ -1,1 +1,1 @@
-[{"uid":"eb071cc6967d1182","name":"test_valiatingTheUIOfHomeScreen[chromium]","time":{"start":1778677073015,"stop":1778677073617,"duration":602},"status":"passed","severity":"normal"}]
+[{"uid":"3e0451ce945c723e","name":"test_Git","time":{"start":1778677826245,"stop":1778677826245,"duration":0},"status":"passed","severity":"normal"},{"uid":"6add61e20b60f1c7","name":"test_valiatingTheUIOfHomeScreen[chromium]","time":{"start":1778677827991,"stop":1778677828150,"duration":159},"status":"passed","severity":"normal"}]
