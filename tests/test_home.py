@@ -6,16 +6,16 @@ from pages.home import homePage
 
         
 @pytest.mark.test1234
-def test_valiatingTheUIOfHomeScreen(page: Page, homePageObj):
-        page.goto("https://www.amazon.in/")
+def test_valiatingTheUIOfHomeScreen(page: Page, homePageObj, launchingAmazon):
+        # page.goto("https://www.amazon.in/")
         # homePageObj = homePage(page)
         homePageObj.validateTheVisibilityOfSearchBar()
         homePageObj.validateAccountsNdListVisibility()       
         
 
 @pytest.mark.test1234
-def test_ValidatingCartVisibility(page: Page):
-        page.goto("https://www.amazon.in/")
+def test_ValidatingCartVisibility(page: Page, launchingAmazon):
+        # page.goto("https://www.amazon.in/")
         homePageObj = homePage(page)
 
         homePageObj.validateTheVisibilityOfSearchBar()

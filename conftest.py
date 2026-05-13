@@ -31,6 +31,13 @@ def shoppingCartObj(page: Page):
 @pytest.fixture(scope="function")
 def launchingAmazon(page: Page):
     page.goto("https://www.amazon.in/")
+    continue_btn = page.get_by_role(
+        "button",
+        name="Continue shopping"
+    )
+
+    if continue_btn.is_visible(timeout=5000):
+        continue_btn.click()
 
 
 
