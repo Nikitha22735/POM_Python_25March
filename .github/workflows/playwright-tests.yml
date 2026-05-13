@@ -14,6 +14,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      BASE_URL: ${{ vars.BASE_URL }}
+      USERNAME: ${{ secrets.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
 
     steps:
       # 1️⃣ Checkout repository
@@ -37,7 +41,7 @@ jobs:
       # 4️⃣ Run Playwright tests (parallel, keep artifacts)
       - name: Run Playwright Tests
         run: |
-          pytest -n 6 -m "test1234"\
+          pytest -n 6 -m "test1234" \
             --alluredir=allure-results \
             --capture=tee-sys
         continue-on-error: true
