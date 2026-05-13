@@ -13,7 +13,7 @@ def test_valiatingTheUIOfHomeScreen(page: Page, homePageObj, launchingAmazon):
         homePageObj.validateAccountsNdListVisibility()       
         
 
-@pytest.mark.test1234
+
 def test_ValidatingCartVisibility(page: Page, launchingAmazon):
         # page.goto("https://www.amazon.in/")
         homePageObj = homePage(page)
