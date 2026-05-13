@@ -1,0 +1,3 @@
+BASE_URL exists: True
+USERNAME exists: True
+PASSWORD exists: True
