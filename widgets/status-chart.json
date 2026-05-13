@@ -1,1 +1,0 @@
-[{"uid":"15d76048377a986f","name":"test_Git","time":{"start":1778678659246,"stop":1778678659246,"duration":0},"status":"passed","severity":"normal"},{"uid":"b47fdccee213c32e","name":"test_valiatingTheUIOfHomeScreen[chromium]","time":{"start":1778678659236,"stop":1778678659236,"duration":0},"status":"broken","severity":"normal"}]
