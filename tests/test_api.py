@@ -1,4 +1,6 @@
 from playwright.sync_api import sync_playwright, expect
+import json
+# import 
 # def test_get_api():
 #     with sync_playwright() as p:
 #         context = p.request.new_context()
@@ -31,7 +33,7 @@ def get_api(playwright):
 
 
 
-def test_postAPI(playwright):
+def postAPI(playwright):
     context = playwright.request.new_context()
     token = {"Authorization": "Bearer 12345"}
     requestBody = {
@@ -43,4 +45,34 @@ def test_postAPI(playwright):
     print(response)
 
 
+
+def test_mock_getAPI(page):
+
+    def mockvalues(route):
+        route.fulfill(
+            status = 201,
+            body=json.dumps({
+                "product":[
+                    {
+                        "title": "test"
+                    }
+                ]
+            })
+        )
+
+
+    page.route("https://dummyjson.com/products",mockvalues)
     
+    response = page.goto("https://dummyjson.com/products")
+    print(response.status)
+    print(response.json())
+
+
+
+
+
+
+
+
+
+
