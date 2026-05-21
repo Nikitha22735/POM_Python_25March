@@ -26,7 +26,7 @@ def test_ValidatingCartVisibility(page: Page, launchingAmazon):
 
 
 # @pytest.mark.test1
-def test_ValidatingCartVisibility(page: Page):
+def test_ValidatingCartVisibility(page2: Page):
         page.goto("https://www.amazon.in/")
         homePageObj = homePage(page)
         homePageObj.validateTheVisibilityOfSearchBar()

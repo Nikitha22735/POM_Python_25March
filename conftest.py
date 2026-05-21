@@ -37,6 +37,31 @@ def launchingAmazon(page: Page):
         continue_btn.click()
 
 
+@pytest.fixture(scope="session")
+def page():
+   with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+        # print(p.devices)
+        context = browser.new_context(storage_state="auth.json")
+
+        page = context.new_page()
+        yield page
+        page.close()
+
+
+
+
+# @pytest.fixture(scope="function")
+# def page2():
+#    with sync_playwright() as p:
+#         browser = p.chromium.launch(headless=False)
+#         # print(p.devices)
+#         context = browser.new_context(storage_state="auth2.json")
+
+#         page = context.new_page()
+#         yield page
+
+
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item):

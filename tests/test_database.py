@@ -27,10 +27,10 @@ def sqLite(quer):
 
 
 # qe = "selct amount from db"
-# def test_ba():
-#     bala = sqLite("SELECT * from Artist where Artist.ArtistId is 8")
-#     usrname = bala[0][0]
-    # pw = bala[0][1]
+def test_ba():
+    bala = sqLite("SELECT * from Artist where Artist.ArtistId is 8")
+    usrname = bala[0][0]
+    pw = bala[0][1]
 
 
 
