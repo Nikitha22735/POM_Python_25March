@@ -19,8 +19,8 @@ def test_example(page: Page, homePageObj,loginPageObj) -> None:
     homePageObj.validateTheVisibilityOfSearchBar()
 
 
-def test_example_1(page: Page, homePageObj,loginPageObj) -> None:
-    page.goto("https://www.amazon.in/")
+def test_example_1(page_noAuth: Page, homePageObj,loginPageObj) -> None:
+    page_noAuth.goto("https://www.amazon.in/")
     homePageObj.clickOnAccountsNdList()    
     formattedData = jsonFile(filepath)        
     loginPageObj.enterEmail("ttt")
