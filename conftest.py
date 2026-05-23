@@ -51,16 +51,26 @@ def page():
 
 
 
-# @pytest.fixture(scope="function")
-# def page2():
-#    with sync_playwright() as p:
-#         browser = p.chromium.launch(headless=False)
-#         # print(p.devices)
-#         context = browser.new_context(storage_state="auth2.json")
+@pytest.fixture(scope="function")
+def page2():
+   with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+        # print(p.devices)
+        context = browser.new_context(storage_state="auth2.json")
 
-#         page = context.new_page()
-#         yield page
+        page = context.new_page()
+        yield page
 
+
+@pytest.fixture(scope="function")
+def page_noAuth():
+   with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+        # print(p.devices)
+        context = browser.new_context()
+
+        page = context.new_page()
+        yield page
 
 
 @pytest.hookimpl(hookwrapper=True)
