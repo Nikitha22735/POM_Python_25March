@@ -1,4 +1,4 @@
-from playwright.sync_api import expect, sync_playwright
+from playwright.sync_api import expect, sync_playwright, Page
 def dimentionsM1():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
@@ -83,7 +83,7 @@ def visualRegression():
 
 
 
-def a2(page:Page):
+def a2(page):
     page.goto("https://testautomationpractice.blogspot.com/")
     page.wait_for_timeout(5000)
     pagesCount = page.locator("//ul[@id='pagination']/li").count()
@@ -101,11 +101,13 @@ def a2(page:Page):
     assert id is not None
 
 
-def test_frames(page):
+def frames(page):
     page.goto("https://demo.guru99.com/test/guru99home/")
     page.wait_for_timeout(5000)
-    page.frame_locator("//iframe[contains(@src,'youtube')]").locator(".ytmCuedOverlayPlayButtonIcon").click()
-    page.wait_for_timeout(5000)
+    page.frame_locator("//iframe[contains(@src,'youtube')]").locator('.ytmCuedOverlayPlayButtonIcon').click()
+    page.wait_for_timeout(3000)
+
+
 
 
 
