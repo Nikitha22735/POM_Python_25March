@@ -1,4 +1,4 @@
-from playwright.sync_api import expect, sync_playwright
+from playwright.sync_api import expect, sync_playwright, Page
 def dimentionsM1():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
