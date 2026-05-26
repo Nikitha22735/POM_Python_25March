@@ -1,11 +1,11 @@
-from playwright.sync_api import expect, sync_playwright
+from playwright.sync_api import expect, sync_playwright, Page
 def dimentionsM1():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         context = browser.new_context(viewport={"width":2301,"height":1200})
         page = context.new_page()
         page.goto("https://testautomationpractice.blogspot.com/")
-        page.wait_for_timeout(5000)
+        page.wait_for_timeout(15000)
 
 
 def mobileEmulations():
