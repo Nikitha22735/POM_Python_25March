@@ -1,0 +1,63 @@
+
+feature
+StepDef
+pages
+tests
+testdata
+conftest
+req
+pyetst
+utils
+.yml
+
+
+
+feature:
+    home.feature
+    login.feature
+    results.feature
+
+
+home.feature:
+
+background: launhing amazon
+Given user launch amazon website
+
+Scenario: validating the UI of Home screen
+
+Then validate the visibility of search bar
+And validate the visibility of accounts and list
+
+
+Scenario: validating the UI of Home screen
+
+Then validate the visibility of search bar
+And validate the visibility of accounts and list
+
+
+Scenario: validating the UI of Home screen
+
+Then validate the visibility of search bar
+And validate the visibility of accounts and list
+
+
+
+1. launch the website
+2. login
+3. type iphoen in search
+4.click on search btn
+5. validate the visibility of iphone
+
+
+
+background: launhing amazon
+Given user launch amazon website
+And user logged in to teh application
+
+
+Scenario: valdiate the results screen
+When user enters iphoen in teh serch bar
+And user clicks on seacrh btn
+Then iphoen shouyld be visibile on the UI
+
+
