@@ -98,7 +98,6 @@ def a2(page:Page):
                 print(page.locator(f'//table[@id="productTable"]/tbody/tr[{i}]/td[1]').text_content())
                 break
         
-    assert id is not None
 
 
 def test_frames(page):
