@@ -83,6 +83,33 @@ def visualRegression():
 
 
 
+def a2(page:Page):
+    page.goto("https://testautomationpractice.blogspot.com/")
+    page.wait_for_timeout(5000)
+    pagesCount = page.locator("//ul[@id='pagination']/li").count()
+    id = None
+    for j in range(1,pagesCount+1):
+        page.locator(f"//ul[@id='pagination']/li[{j}]").click()
+        for i in range(1,6):
+            page.wait_for_timeout(3000)
+            if page.locator(f'//table[@id="productTable"]/tbody/tr[{i}]/td[2]').text_content() == "Soundbar":
+                print("inside")
+                id = page.locator(f'//table[@id="productTable"]/tbody/tr[{i}]/td[1]').text_content()
+                print(page.locator(f'//table[@id="productTable"]/tbody/tr[{i}]/td[1]').text_content())
+                break
+        
+    assert id is not None
+
+
+def test_frames(page):
+    page.goto("https://demo.guru99.com/test/guru99home/")
+    page.wait_for_timeout(5000)
+    page.frame_locator("//iframe[contains(@src,'youtube')]").locator(".ytmCuedOverlayPlayButtonIcon").click()
+    page.wait_for_timeout(5000)
+
+
+
+
 
 
 
