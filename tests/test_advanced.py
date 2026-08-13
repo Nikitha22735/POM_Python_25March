@@ -5,7 +5,7 @@ def dimentionsM1():
         context = browser.new_context(viewport={"width":2301,"height":1200})
         page = context.new_page()
         page.goto("https://testautomationpractice.blogspot.com/")
-        page.wait_for_timeout(15000)
+        page.wait_for_timeout(5000)
 
 
 def mobileEmulations():
